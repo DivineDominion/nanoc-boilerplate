@@ -9,6 +9,8 @@ This is my personal boilerplate setup for nanoc websites.
 
 I assume you're public html folder is called `htdocs/` and you can create new folders below your domains folder but outside `htdocs/`.
 
+I also assume you use my Rakefile:  upon `rake build` it will checkout the branch 'deploy' and put all files from `output/` in there.  Uploading from 'deploy' to the production server will only copy the HTML output, not the nanoc setup.
+
 *   initialize bare production git repository on the server:
 
         $ git init --bare ~/doms/example.com/git
@@ -43,4 +45,8 @@ I assume you're public html folder is called `htdocs/` and you can create new fo
 *   commit changes locally and put them on the server:
         
         $ git commit
-        $ git push production`
+        $ rake build
+        $ git push production deploy
+    
+    You can push all branches via `git push production` to backup your code. 
+    Only the branch 'deploy' will be visible to the public.
