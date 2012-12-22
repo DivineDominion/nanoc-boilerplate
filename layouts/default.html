@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="<%= @item[:lang] || @site.config[:meta_data][:lang] %>" class="no-js ie ie6 lte7 lte8 lte9"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<%= @item[:lang] || @site.config[:meta_data][:lang] %>" class="no-js ie ie7 lte7 lte8 lte9"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<%= @item[:lang] || @site.config[:meta_data][:lang] %>" class="no-js ie ie8 lte8 lte9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<%= @item[:lang] || @site.config[:meta_data][:lang] %>" class="no-js ie ie9 lte9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<%= @item[:lang] || @site.config[:meta_data][:lang] %>" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title><%= @item[:title] + " &bull; " if @item[:title] %><%= @site.config[:meta_data][:title] %></title>
+  <%= meta_tag :description %>
+  <%= meta_tag :copyright %>
+  <%= meta_tag :author %>
+  <meta name="viewport" content="width=320,user-scalable=no" />
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/style.css" media="screen"/>
+  <link href="/favicon.ico" rel="shortcut icon">
+  <link type="text/plain" rel="author" href="/humans.txt" />
+</head>
+<body>
+  <div id="content">
+    <header id="banner">
+      <h1><%= @site.config[:meta_data][:title] %></h1>
+    </header>
+
+    <%= yield %>
+
+    <footer>
+      <%= render '_footer' %>      
+    </footer>
+  </div>
+  
+  <!-- scripts concatenated and minified via build script -->
+  <script src="/js/application.js"></script>
+  
+  <!-- Asynchronous Google Analytics snippet. via http://mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','<%= @site.config[:meta_data][:ga_tracking_code] %>'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>

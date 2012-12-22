@@ -1,0 +1,20 @@
+# The humans responsible & technology colophon
+# humanstxt.org
+
+
+# TEAM
+
+Owner:    Foo Bar
+Site:     http://example.com
+Twitter:  @example
+Location: Bielefeld, Germany
+
+# THANKS
+
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, html5boilerplate
+    nanoc
+    jQuery, Modernizr
+
