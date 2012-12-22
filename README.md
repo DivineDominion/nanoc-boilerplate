@@ -2,7 +2,7 @@
 
 This is my personal boilerplate setup for nanoc websites.
 
-*   [nanoc3](nanoc.stoneship.org), static website generator
+*   [nanoc3](http://nanoc.stoneship.org), static website generator
 *   [html5boilerplate](http://html5boilerplate.com/)
 
 # Deployment
@@ -50,3 +50,4 @@ I also assume you use my Rakefile:  upon `rake build` it will checkout the branc
     
     You can push all branches via `git push production` to backup your code. 
     Only the branch 'deploy' will be visible to the public.
+
